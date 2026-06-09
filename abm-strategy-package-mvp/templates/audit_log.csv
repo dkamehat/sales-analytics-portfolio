@@ -1,0 +1,2 @@
+date,account_id,account_name,decision_type,from_tier,to_tier,priority_score,reason,counterargument,recommended_play,owner_role,review_date,success_signal
+2026-06-10,ACC-001,Northstar Manufacturing Co.,tier_change,B,A,4.2,High strategic fit and validated pain,Executive access is still weak,executive_mapping,account_owner,2026-07-10,Executive sponsor role identified
