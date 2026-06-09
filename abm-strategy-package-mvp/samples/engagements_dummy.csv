@@ -1,0 +1,6 @@
+engagement_id,account_id,engagement_type,engagement_band,outcome_summary,next_step
+ENG-001,ACC-001,introduction_meeting,recent,Champion confirmed operational pain but economic buyer access is weak,Run executive mapping
+ENG-002,ACC-002,discovery_call,recent,Need is plausible but budget timing is unclear,Validate urgency
+ENG-003,ACC-003,email_touch,stale,Low response and unclear pain,Nurture until trigger appears
+ENG-004,ACC-004,proposal_review,active,Strong pain but delivery risk is high,Run risk review
+ENG-005,ACC-005,research_only,none,Strategic fit appears high but access and risk are unresolved,Hold until sponsor path exists
