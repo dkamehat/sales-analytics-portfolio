@@ -1,0 +1,99 @@
+version: 0.1
+name: abm_action_catalog
+purpose: >
+  Convert account priority decisions into concrete ABM actions.
+  Every decision should either create an action or explicitly mark the account as hold/deprioritized.
+
+actions:
+  executive_mapping:
+    description: Map decision makers, influencers, blockers, and potential executive sponsors.
+    use_when:
+      - Account attractiveness is high
+      - Executive access is weak or unclear
+      - Buying process is complex
+    default_owner_role: account_owner
+    default_due_days: 10
+    success_signal: At least one economic buyer or executive sponsor role is identified.
+
+  discovery_meeting:
+    description: Run a focused discovery conversation to validate pain, urgency, and business impact.
+    use_when:
+      - Pain urgency is unclear
+      - Account is promising but not ready for proposal
+    default_owner_role: account_owner
+    default_due_days: 14
+    success_signal: Customer pain, current process, urgency, and success criteria are documented.
+
+  account_research:
+    description: Gather public and approved information to clarify account context.
+    use_when:
+      - Data is insufficient
+      - Account looks attractive but evidence is weak
+    default_owner_role: sales_ops_or_bizops
+    default_due_days: 7
+    success_signal: Account Strategy Canvas is filled with enough evidence for review.
+
+  tailored_proposal:
+    description: Create a tailored proposal based on validated pain and account context.
+    use_when:
+      - Account is Tier A
+      - Pain is validated
+      - Relationship path exists
+    default_owner_role: account_owner
+    default_due_days: 21
+    success_signal: Proposal is reviewed with a relevant stakeholder.
+
+  proof_of_value:
+    description: Design a small proof-of-value activity to validate business impact.
+    use_when:
+      - Customer needs evidence before broader commitment
+      - Use case is narrow enough to test
+    default_owner_role: solution_owner
+    default_due_days: 30
+    success_signal: Customer agrees on success metrics and next decision gate.
+
+  stakeholder_warming:
+    description: Build relationship with key stakeholders through low-cost, relevant touchpoints.
+    use_when:
+      - Account is attractive but relationship is weak
+      - Immediate sales motion would be premature
+    default_owner_role: account_owner
+    default_due_days: 21
+    success_signal: Stakeholder replies, accepts meeting, or engages with relevant content.
+
+  expansion_mapping:
+    description: Identify additional teams, regions, or use cases in an existing account.
+    use_when:
+      - Existing relationship exists
+      - Expansion potential is high
+    default_owner_role: account_owner
+    default_due_days: 14
+    success_signal: At least two expansion paths are mapped with stakeholder hypotheses.
+
+  risk_review:
+    description: Review legal, security, operational, or delivery risks before investing more effort.
+    use_when:
+      - Account is attractive but execution risk is high
+      - There are blockers outside sales control
+    default_owner_role: cross_functional_owner
+    default_due_days: 14
+    success_signal: Risk is classified as acceptable, mitigatable, or blocking.
+
+  nurture:
+    description: Keep the account warm with low-cost automated or periodic touchpoints.
+    use_when:
+      - Account is not ready
+      - Pain or budget timing is weak
+    default_owner_role: marketing_or_account_owner
+    default_due_days: 45
+    success_signal: Clear trigger is defined for reactivation.
+
+  deprioritize:
+    description: Explicitly stop investing active sales resources for now.
+    use_when:
+      - Fit is low
+      - Execution feasibility is low
+      - Better accounts exist
+    default_owner_role: sales_lead
+    default_due_days: 0
+    success_signal: Account is removed from active review until a trigger changes.
