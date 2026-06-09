@@ -1,0 +1,6 @@
+account_id,account_name,industry_segment,revenue_band,employee_band,region,current_tier,strategic_fit,revenue_potential,pain_urgency,relationship_strength,expansion_potential,execution_feasibility,risk_friction
+ACC-001,Northstar Manufacturing Co.,manufacturing,strategic,very_large,central,B,5,5,4,2,5,4,2
+ACC-002,Blue River Logistics,logistics,high,enterprise,west,B,4,4,3,3,4,3,3
+ACC-003,Greenfield Healthcare Group,healthcare,medium,enterprise,east,C,3,3,2,2,3,2,4
+ACC-004,Metro Retail Holdings,retail,high,very_large,global,A,4,5,5,4,4,2,5
+ACC-005,Atlas Public Services,public_sector,medium,very_large,north,hold,5,3,4,1,3,2,5
