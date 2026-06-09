@@ -1,0 +1,143 @@
+version: 0.1
+name: abm_strategy_ontology
+purpose: >
+  Define generic business objects for an ABM strategy package.
+  This file uses fictional and abstract fields only.
+
+objects:
+  account:
+    description: A target company or organization to be prioritized for ABM.
+    fields:
+      account_id:
+        type: string
+        example: ACC-001
+      account_name:
+        type: string
+        example: Northstar Manufacturing Co.
+      industry_segment:
+        type: enum
+        values: [manufacturing, logistics, healthcare, retail, financial_services, public_sector, other]
+      revenue_band:
+        type: enum
+        values: [low, medium, high, strategic]
+      employee_band:
+        type: enum
+        values: [small, mid_market, enterprise, very_large]
+      region:
+        type: enum
+        values: [north, east, west, south, central, global, unknown]
+      current_tier:
+        type: enum
+        values: [A, B, C, hold, unassigned]
+      proposed_tier:
+        type: enum
+        values: [A, B, C, hold]
+      account_owner_role:
+        type: string
+        example: account_owner
+
+  stakeholder:
+    description: A role involved in the account decision process.
+    fields:
+      stakeholder_id:
+        type: string
+        example: STK-001
+      account_id:
+        type: string
+        relationship: account.account_id
+      role_type:
+        type: enum
+        values: [economic_buyer, technical_buyer, champion, blocker, user_leader, executive_sponsor, unknown]
+      influence_level:
+        type: enum
+        values: [low, medium, high]
+      relationship_strength:
+        type: enum
+        values: [none, weak, moderate, strong]
+      last_engagement_band:
+        type: enum
+        values: [none, stale, recent, active]
+
+  account_signal:
+    description: A structured signal used to evaluate account priority.
+    fields:
+      account_id:
+        type: string
+      signal_type:
+        type: enum
+        values:
+          - growth_intent
+          - pain_urgency
+          - budget_signal
+          - executive_interest
+          - product_fit
+          - expansion_signal
+          - implementation_risk
+          - competitive_risk
+      signal_strength:
+        type: enum
+        values: [negative, weak, medium, strong]
+      evidence_summary:
+        type: string
+        note: synthetic_or_approved_information_only
+
+  decision:
+    description: A recorded prioritization decision.
+    fields:
+      decision_id:
+        type: string
+      account_id:
+        type: string
+      decision_type:
+        type: enum
+        values: [tier_change, tier_keep, hold, additional_research, executive_review]
+      from_tier:
+        type: enum
+        values: [A, B, C, hold, unassigned]
+      to_tier:
+        type: enum
+        values: [A, B, C, hold]
+      reason:
+        type: string
+      counterargument:
+        type: string
+      decision_owner_role:
+        type: string
+      review_date:
+        type: date
+
+  action:
+    description: A next action recommended by the ABM decision package.
+    fields:
+      action_id:
+        type: string
+      account_id:
+        type: string
+      action_type:
+        type: enum
+        values:
+          - executive_mapping
+          - discovery_meeting
+          - account_research
+          - tailored_proposal
+          - proof_of_value
+          - stakeholder_warming
+          - dormant_reactivation
+          - deprioritize
+          - risk_review
+      owner_role:
+        type: string
+      due_date:
+        type: date
+      success_signal:
+        type: string
+      status:
+        type: enum
+        values: [todo, doing, done, blocked, cancelled]
+
+principles:
+  - Use fictional or approved data only.
+  - Keep object names generic and industry-neutral.
+  - Separate account attractiveness from execution feasibility.
+  - Record counterarguments, not only reasons for approval.
+  - Every decision should create a next action or an explicit hold reason.
