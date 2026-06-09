@@ -1,0 +1,9 @@
+stakeholder_id,account_id,role_type,influence_level,relationship_strength,last_engagement_band
+STK-001,ACC-001,economic_buyer,high,weak,stale
+STK-002,ACC-001,champion,medium,moderate,recent
+STK-003,ACC-002,technical_buyer,medium,moderate,recent
+STK-004,ACC-002,user_leader,medium,strong,active
+STK-005,ACC-003,blocker,high,weak,recent
+STK-006,ACC-004,economic_buyer,high,strong,active
+STK-007,ACC-004,blocker,medium,moderate,recent
+STK-008,ACC-005,executive_sponsor,high,none,none
